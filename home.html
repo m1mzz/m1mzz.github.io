@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title><!-- flickity-->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link href="static/css/index.min.css" rel="stylesheet">
+    <link rel="icon" href="static/favicon.ico">
+  </head>
+  <body>
+    <!-- SVG-->
+    <div class="svg-container" style="position: absolute; width: 0; height: 0; overflow: hidden;"><svg xmlns="http://www.w3.org/2000/svg">
+        <symbol id="icon-logo" viewBox="0 0 210 50">
+          <path d="M71.02 14H64v7.15h1.96V41H73V14h-1.98z" />
+          <path d="M69 .343L74.657 6 69 11.657 63.343 6z" />
+          <path d="M17.939 14v16.795c-1.898 1.817-4.265 2.716-5.53 2.636-2.409-.14-3.756-1.937-4.43-4.673V14H0v15.157h.02c.02.24.041.48.062.7.938 6.03 5.428 11.023 12.143 11.023 2.367 0 4.57-.619 6.428-1.677l1.694 1.557c.163.16.388.24.633.24H26V14h-8.061z" />
+          <path d="M130.953 14v16.795c-1.9 1.817-4.269 2.716-5.535 2.636-2.41-.14-3.758-1.937-4.432-4.673V14H113v15.157h.02c.021.24.041.48.062.7.939 6.01 5.433 11.023 12.132 11.023 2.369 0 4.575-.619 6.433-1.677l1.695 1.557c.164.16.389.24.634.24H139V14h-8.047z" />
+          <path d="M41.047 40.98V24.185c1.9-1.817 4.269-2.716 5.535-2.636 2.41.14 3.758 1.937 4.432 4.673V40.98H59V25.823h-.02c-.02-.24-.041-.48-.062-.7-.94-6.01-5.432-11.023-12.132-11.023-2.144 0-4.084.48-5.841 1.378V14H33v27h8.047v-.02z" />
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M87.098 46.663v.55c.087-.02.16-.03.23-.04.076-.01.15-.02.233-.042.242-.025.484-.058.726-.09.544-.074 1.088-.148 1.632-.134 2.136.04 4.212.489 6.267.978.578.134 1.156.273 1.734.41 3.007.72 6.018 1.442 9.128 1.647 2.196.142 4.352.04 6.489-.49.201-.06.463-.121.463-.121v-.49c-.02-2.015-.02-6.333-.02-6.536-5.824 1.323-11.406-.062-16.948-1.548.182-.143.363-.224.545-.285 3.083-1.161 5.461-3.157 6.952-6.13 2.096-4.175 2.156-8.472.302-12.729-1.29-2.932-3.446-5.07-6.368-6.374-2.62-1.16-5.32-1.486-8.141-1.059-3.647.57-6.63 2.281-8.786 5.316-2.237 3.156-2.922 6.7-2.338 10.508.746 4.704 3.245 8.105 7.517 10.142.302.142.383.183.383.183v6.334zm-.564-19.184c.1-3.34 2.62-5.845 6.065-5.845 3.365.061 5.985 2.403 5.985 6.028 0 3.645-2.6 6.11-6.065 6.11-3.547-.02-6.086-2.79-5.985-6.293z" />
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M163 27.5c0-7.449 6.051-13.5 13.5-13.5S190 20.031 190 27.5c0 7.449-6.051 13.5-13.5 13.5S163 34.949 163 27.5zm7.489-.02a6.017 6.017 0 0 0 6.011 6.011 6.004 6.004 0 0 0 6.011-6.011 6.017 6.017 0 0 0-6.011-6.011 6.017 6.017 0 0 0-6.011 6.011z" />
+          <path d="M160 20.713v-7.196h-4.639V5l-7.887 2.52v5.977H144v7.196h3.474v13.09c0 4.574 4.454 7.217 9.931 7.217.388 0 .776-.02 1.144-.04V33.62c-1.9-.02-2.779-.57-3.188-1.545V20.693H160v.02z" />
+          <path d="M209.856 14.1c-2.155 0-4.105.48-5.871 1.378V14H196v27h8.109V24.205c1.909-1.817 4.29-2.716 5.563-2.636.102 0 .205.02.328.04v-7.49c-.062 0-.103-.02-.144-.02z" />
+        </symbol>
+      </svg></div><!-- picture element HTML5 shiv-->
+    <script>document.createElement('picture');
+</script><!-- Header-->
+    <header class="header">
+      <ul class="header__menu">
+        <li><a href="/about.html">О Uniqutor</a></li>
+        <li><a href="/packages.html">Пакеты</a></li>
+        <li><a href="/education_system.html">Образование в Великобритании</a></li>
+        <li><a href="/for_school.html">Для школьников</a></li>
+        <li><a href="/for_students.html">Для студентов</a></li>
+        <li><a href="/education_abroad.html">Образование за границей</a></li>
+        <li><a href="/services.html">Услуги компании</a></li>
+        <li><a href="/faq.html">FAQ или Статьи</a></li>
+        <li><a href="/contacts.html">Контакты</a></li>
+      </ul>
+      <div class="container">
+        <div class="header__burger"><button class="hamburger hamburger--collapse" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button></div><a class="header__logo" href="/home.html"><svg class="icon-logo ">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-logo"></use>
+          </svg></a>
+      </div>
+    </header><!-- Main content-->
+    <main class="content" data-page="home">
+      <div class="welcome">
+        <h1 class="welcome__label">Ваш персональный ассистент по образованию в Англии</h1>
+        <div class="container welcome__container"><img class="welcome__figure_1" src="static/img/main/bg_1.svg" /><img class="welcome__main" src="static/img/main/main.svg" /><img class="welcome__back-slider" src="static/img/main/back-slider.svg" />
+          <div class="welcome__slider">
+            <div class="welcome__slide"><img src="static/img/main/bg1.svg" />
+              <div class="welcome__slide-text"><span>Tрансфер ребенка в школу</span></div>
+            </div>
+            <div class="welcome__slide"><img src="static/img/main/bg2.svg" />
+              <div class="welcome__slide-text"><span>Индивидуальный подбор школы</span></div>
+            </div>
+            <div class="welcome__slide"><img src="static/img/main/bg3.svg" />
+              <div class="welcome__slide-text"><span>Tорганизация досуга и каникул</span></div>
+            </div>
+            <div class="welcome__slide"><img src="static/img/main/bg4.svg" />
+              <div class="welcome__slide-text"><span>Oрганизация образовательного процесса</span></div>
+            </div>
+            <div class="welcome__slide"><img src="static/img/main/bg5.svg" />
+              <div class="welcome__slide-text"><span>помощь в участии в соревнованиях.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="what">
+        <div class="bg__helpers">
+          <div class="bg__helper__1"></div>
+          <div class="bg__helper__2"></div>
+        </div>
+        <div class="container">
+          <h2 class="what__label">Что мы делаем</h2>
+          <p class="what__desc">Оптимальная забота о Вашем ребенке</p>
+          <div class="what__tabs"><button class="what__tab active">Для школьников</button><button class="what__tab">Для студентов</button><button class="what__tab">Для взрослых</button></div>
+          <div class="what__content">
+            <div class="what__content-tab active">
+              <ul>
+                <li class="what__content-tab__item">Aдаптация ребенка к стране</li>
+                <li class="what__content-tab__item">Контроль прогресса обучения</li>
+                <li class="what__content-tab__item">Ведение школьной документации</li>
+                <li class="what__content-tab__item">Обеспечение информационной переписки между родителями и школой</li>
+                <li class="what__content-tab__item">Развитие индивидуальных качеств (способность ребенка принимать самостоятельные решения)</li>
+                <li class="what__content-tab__item">Поддержка во время соревнований и конкурсов</li>
+                <li class="what__content-tab__item">Поддержка в получении стипендий</li>
+                <li class="what__content-tab__item">Индивидуальный подбор летних лагерей, языковых и тематических курсов</li>
+              </ul>
+            </div>
+            <div class="what__content-tab">
+              <ul>
+                <li class="what__content-tab__item">Индивидуальный подбор ВУЗа в ВБ или США</li>
+                <li class="what__content-tab__item">Подготовка к вступительным экзаменам по индивидуально разработанным программам</li>
+                <li class="what__content-tab__item">Сопровождение на всех этапах поступления в ВУЗ</li>
+                <li class="what__content-tab__item">Подбор места для практики или работы</li>
+                <li class="what__content-tab__item">Квалифицированная помощь в оформлении резюме, портфолио и/или прохождения собеседований</li>
+              </ul>
+            </div>
+            <div class="what__content-tab">
+              <ul>
+                <li class="what__content-tab__item">Подбор языковых курсов и специализированных программ для взрослых для личного или профессионального развития</li>
+                <li class="what__content-tab__item">Поддержка в образовательном процессе детей русскоязычных семей, которые проживают в Англии</li>
+                <li class="what__content-tab__item">Подбор нянь, репетиторов, развивающих и спортивных секций</li>
+              </ul>
+            </div><button class="btn btn--blue what__btn">Получить консультацию</button>
+          </div>
+          <div class="what__contetnt__img"><img src="/static/img/main/inner_what.svg" alt="" /></div>
+        </div>
+      </div>
+      <div class="advantages">
+        <div class="bg__helpers">
+          <div class="bg__helper__1"></div>
+          <div class="bg__helper__2"></div>
+        </div>
+        <div class="container">
+          <div class="advantages__label">
+            <h2>Преимущества работы с нами</h2>
+          </div>
+          <div class="advantages__columns">
+            <div class="advantages__columns__item">
+              <div class="advantages__columns__item__image"><img src="/static/img/advantages/icon_1.svg" alt="" /></div>
+              <div class="advantages__columns__item__label">
+                <h4>Личный опыт </h4>
+              </div>
+              <div class="advantages__columns__item__desc">
+                <p>Наши кьюторы – выпускники английских школ, знающие все проблемы, возникающие у учеников, "изнутри".</p>
+              </div>
+            </div>
+            <div class="advantages__columns__item">
+              <div class="advantages__columns__item__image"><img src="/static/img/advantages/icon_2.svg" alt="" /></div>
+              <div class="advantages__columns__item__label">
+                <h4>Высокий профессионализм в узкой нише</h4>
+              </div>
+              <div class="advantages__columns__item__desc">
+                <p>Только образование в Великобритании.</p>
+              </div>
+            </div>
+            <div class="advantages__columns__item">
+              <div class="advantages__columns__item__image"><img src="/static/img/advantages/icon_3.svg" alt="" /></div>
+              <div class="advantages__columns__item__label">
+                <h4>Индивидуальный подход. </h4>
+              </div>
+              <div class="advantages__columns__item__desc">
+                <p>Наша миссия – раскрытие талантов и способностей каждого ребенка.</p>
+              </div>
+            </div>
+            <div class="advantages__columns__item">
+              <div class="advantages__columns__item__image"><img src="/static/img/advantages/icon_4.svg" alt="" /></div>
+              <div class="advantages__columns__item__label">
+                <h4>Помощь по обе стороны границы</h4>
+              </div>
+              <div class="advantages__columns__item__desc">
+                <p>Наши услуги не ограничивается подбором школы и подготовкой к поступлению на родине – в Англии ребенка будет сопровождать профессиональный кьютор.</p>
+              </div>
+            </div>
+            <div class="advantages__columns__item">
+              <div class="advantages__columns__item__image"><img src="/static/img/advantages/icon_5.svg" alt="" /></div>
+              <div class="advantages__columns__item__label">
+                <h4>Поддержка на каждом этапе обучения.</h4>
+              </div>
+              <div class="advantages__columns__item__desc">
+                <p>Мы контролируем успеваемость и помогаем преодолеть все возникающие трудности.</p>
+              </div>
+            </div>
+            <div class="advantages__columns__item">
+              <div class="advantages__columns__item__image"><img src="/static/img/advantages/icon_6.svg" alt="" /></div>
+              <div class="advantages__columns__item__label">
+                <h4>Оптимальный уровень заботы.</h4>
+              </div>
+              <div class="advantages__columns__item__desc">
+                <p>Наше кьюторство – это "золотая середина", которая обеспечивает ребенку безопасность, не лишая при этом самостоятельности.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="packages">
+        <div class="bg__helpers">
+          <div class="bg__helper__1"></div>
+          <div class="bg__helper__2"></div>
+        </div>
+        <div class="container">
+          <div class="packages__content">
+            <div class="packages__content__label">
+              <h2>Пакеты услуг</h2>
+            </div>
+            <div class="packages__content__cards">
+              <div class="cards__item">
+                <div class="cards__item__img"><img src="/static/img/packages/icon_1.svg" alt="" /></div>
+                <div class="cards__item__label">
+                  <h3>The Academic Advisor</h3>
+                </div>
+                <div class="cards__item__desc">
+                  <p>Этот пакет идеально подходит родителям, чьи дети сталкиваются со сложностями в обучении.</p>
+                </div>
+                <div class="cards__item__list">
+                  <ul>
+                    <li class="cards__item__list-item">40 часов нашей работы на протяжение триместра*</li>
+                    <li class="cards__item__list-item">Ведение всей необходимой школьной документации.</li>
+                  </ul>
+                </div><button class="cards__item__btn"> Подробнее</button>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__img"><img src="/static/img/packages/icon_2.svg" alt="" /></div>
+                <div class="cards__item__label">
+                  <h3>The Protector</h3>
+                </div>
+                <div class="cards__item__desc">
+                  <p>Оптимальный пакет для родителей, чей ребенок проводит выходные вне школы.</p>
+                </div>
+                <div class="cards__item__list">
+                  <ul>
+                    <li class="cards__item__list-item">60 часов нашей работы на протяжение триместра.*</li>
+                    <li class="cards__item__list-item">Ведение всей необходимой школьной документации.</li>
+                  </ul>
+                </div><button class="cards__item__btn"> Подробнее</button>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__img"><img src="/static/img/packages/icon_3.svg" alt="" /></div>
+                <div class="cards__item__label">
+                  <h3>The Family Angel</h3>
+                </div>
+                <div class="cards__item__desc">
+                  <p>Отличное решение для родителей, которые часто посещают Великобританию и испытывают необходимость в персональном ассистенте.</p>
+                </div>
+                <div class="cards__item__list">
+                  <ul>
+                    <li class="cards__item__list-item">80 часов нашей работы на протяжение триместра.*</li>
+                    <li class="cards__item__list-item">Ведение всей необходимой школьной документации.</li>
+                  </ul>
+                </div><button class="cards__item__btn"> Подробнее</button>
+              </div>
+              <div class="cards__item">
+                <div class="cards__item__img"><img src="/static/img/packages/icon_4.svg" alt="" /></div>
+                <div class="cards__item__label">
+                  <h3>The Double Trouble Supervisor</h3>
+                </div>
+                <div class="cards__item__desc">
+                  <p>Настоящее спасение для родителей, у которых больше одного ребенка в семье и которые планируют обучение их в разных школах.</p>
+                </div>
+                <div class="cards__item__list">
+                  <ul>
+                    <li class="cards__item__list-item">120 часов нашей работы на протяжение триместра*</li>
+                    <li class="cards__item__list-item">Ведение всей необходимой школьной документации.</li>
+                  </ul>
+                </div><button class="cards__item__btn"> Подробнее</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="packages__controls"><svg class="packages__controls__left">
+              <use xlink:href="/static/img/main/icons_sprite.svg#arrow_left"></use>
+            </svg><svg class="packages__controls__right">
+              <use xlink:href="/static/img/main/icons_sprite.svg#arrow_right"></use>
+            </svg></div>
+        </div>
+      </div>
+      <div class="services">
+        <div class="bg__helpers">
+          <div class="bg__helper__1"></div>
+          <div class="bg__helper__2"></div>
+        </div>
+        <div class="container">
+          <div class="services__content">
+            <h2 class="services__content__label">Услуги компании</h2>
+            <div class="services__content__cards">
+              <div class="services__cards__item"><img class="services__cards__img" src="/static/img/services/icon_1.svg" alt="" />
+                <h3 class="services__cards__label">Кьютерство</h3><button class="services__cards__btn">Подробнее</button>
+              </div>
+              <div class="services__cards__item"><img class="services__cards__img" src="/static/img/services/icon_2.svg" alt="" />
+                <h3 class="services__cards__label">Поступление в школу</h3><button class="services__cards__btn">Подробнее</button>
+              </div>
+              <div class="services__cards__item"><img class="services__cards__img" src="/static/img/services/icon_3.svg" alt="" />
+                <h3 class="services__cards__label">Языковые курсы</h3><button class="services__cards__btn">Подробнее</button>
+              </div>
+            </div><button class="get_consalt">Получить консультацию</button>
+          </div>
+        </div>
+      </div>
+      <div class="testimonials">
+        <div class="bg__helpers">
+          <div class="bg__helper__1"></div>
+          <div class="bg__helper__2"></div>
+        </div>
+        <div class="container">
+          <div class="testimonials__content">
+            <div class="testimonials__item">
+              <p class="testimonials__quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <hr class="testimonials__devider" />
+              <div class="testimonials__person"><img class="testimonials__person__img" src="/static/img/person_avatar/icon_1.svg" alt="" />
+                <div class="testimonials__person__title">
+                  <p class="testimonials__person__desc">Начальник академического отдела</p>
+                  <h4 class="testimonials__person__lable">Jamie Khan</h4>
+                </div>
+              </div>
+            </div>
+            <div class="testimonials__item">
+              <p class="testimonials__quote">Lorem2121 ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <hr class="testimonials__devider" />
+              <div class="testimonials__person"><img class="testimonials__person__img" src="/static/img/person_avatar/icon_1.svg" alt="" />
+                <div class="testimonials__person__title">
+                  <p class="testimonials__person__desc">Начальник2 академического отдела</p>
+                  <h4 class="testimonials__person__lable">Jamie Khan</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonials__controls"><svg class="testimonials__controls__left">
+              <use xlink:href="/static/img/main/icons_sprite.svg#arrow_left"></use>
+            </svg><svg class="testimonials__controls__right">
+              <use xlink:href="/static/img/main/icons_sprite.svg#arrow_right"></use>
+            </svg></div>
+        </div>
+      </div>
+    </main><!-- Footer-->
+    <footer class="footer">
+      <div class="bg__helpers">
+        <div class="bg__helper__1"></div>
+        <div class="bg__helper__2"></div>
+      </div>
+      <div class="container">
+        <div class="footer__footer-main">
+          <nav class="footer-main__footer-menu">
+            <ul class="footer-menu__footter-links">
+              <li><a class="footer-links__item" href="#">О Uniqutor</a></li>
+              <li><a class="footer-links__item" href="#">Пакеты</a></li>
+              <li><a class="footer-links__item" href="#">Образование в Великобритании</a></li>
+              <li><a class="footer-links__item" href="#">Для школьников</a></li>
+              <li><a class="footer-links__item" href="#">Для студентов</a></li>
+              <li><a class="footer-links__item" href="#">Образование за границей</a></li>
+            </ul>
+            <ul class="footer-menu__footter-links">
+              <li><a class="footer-links__item" href="#">Услуги компании</a></li>
+              <li><a class="footer-links__item" href="#">FAQ или Статьи</a></li>
+              <li><a class="footer-links__item" href="#">Контакты</a></li>
+              <li><a class="footer-links__item" href="#">Политика конфиденциальности</a></li>
+              <li><a class="footer-links__item" href="#">Пользовательское соглашение</a></li>
+            </ul>
+          </nav>
+          <div class="footer-main__callback-form">
+            <form class="callback-form" action="#">
+              <h5 class="callback-form__label">Заказать звонок</h5><input class="callback-form__input" type="text" name="name" id="" placeholder="Ваше имя…" /><input class="callback-form__input" type="text" name="email" id="" placeholder="Ваше e-mail…" /><input class="callback-form__button" type="submit" name="submit-callback" id="" value="Связаться" />
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footet-devider">
+        <hr class="footer-devider__devider" />
+      </div>
+      <div class="container">
+        <div class="footer-bottom"><span class="footer-bottom__copyright">© 2019 . All rights reserved.</span>
+          <div class="footer-bottom__social-links"><a href="https://facebook.com" target="_blank"><svg class="social-links">
+                <use xlink:href="/static/img/main/icons_sprite.svg#facebook"></use>
+              </svg></a><a href="https://instagram.com" target="_blank"><svg class="social-links">
+                <use xlink:href="/static/img/main/icons_sprite.svg#instagram"></use>
+              </svg></a><a href="https://linkedin.com" target="_blank"><svg class="social-links">
+                <use xlink:href="/static/img/main/icons_sprite.svg#linkedin"></use>
+              </svg></a></div>
+        </div>
+      </div>
+    </footer><!-- Scripts-->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="static/js/index.min.js"></script>
+  </body>
+</html>
