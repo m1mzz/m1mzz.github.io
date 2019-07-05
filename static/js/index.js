@@ -11108,8 +11108,9 @@ switch (_helpers.currentPage) {
     console.warn('Undefined page');
 }
 _aos2.default.init({
-  once: true
-  // duration: 600,
+  once: true,
+  duration: 600,
+  easing: 'ease-out-back'
 });
 
 /***/ }),
@@ -11428,6 +11429,7 @@ var Home = function () {
         prevNextButtons: false,
         accessibility: false,
         autoPlay: 2000,
+        wrapAround: true,
         pauseAutoPlayOnHover: false
         // draggable: false
       });
