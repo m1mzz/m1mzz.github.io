@@ -11006,23 +11006,6 @@ function tabsInit(tab, content) {
   }
 }
 
-// function tabsInit () {
-//   const $tabsContainer = $('.what__tabs');
-//   const $tab = $('.what__tab');
-
-//   const $content = $('.what__content-tab')
-//   $tabsContainer.on('click', $tab, tabsClickHandler)
-
-//   function tabsClickHandler (e) {
-//     const index = $tab.index(e.target)
-//     $tab.removeClass('active')
-//     $tab.eq(index).addClass('active')
-//     $content.removeClass('active')
-//     $content.eq(index).addClass('active')
-//     $tabsContainer
-//   }
-// }
-
 /***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
