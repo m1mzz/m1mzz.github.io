@@ -11029,6 +11029,8 @@ var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
+var _helpers = __webpack_require__(1);
+
 var _Home = __webpack_require__(7);
 
 var _Home2 = _interopRequireDefault(_Home);
@@ -11048,8 +11050,6 @@ var _EducationSystem2 = _interopRequireDefault(_EducationSystem);
 var _aos = __webpack_require__(11);
 
 var _aos2 = _interopRequireDefault(_aos);
-
-var _helpers = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11085,11 +11085,45 @@ switch (_helpers.currentPage) {
     new _Services2.default();break;
   case 'education_system':
     new _EducationSystem2.default();break;
+  case 'for_students':
+  case 'for_school':
+    forSchool();break;
 
   /** No page found */
   default:
     console.warn('Undefined page');
 }
+// section top js polifill to chsnge Y in svg
+
+function forSchool() {
+  var resizeTimer;
+  var $elShiftY = (0, _jquery2.default)('.st_clip_shift');
+  if (!$elShiftY) return;
+  (0, _jquery2.default)(window).on('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      changeY();
+    }, 250);
+  });
+  function changeY() {
+    // const MAX_HEIGHT = 500;
+    // const MIN_HEIGHT = 500;
+    // const halfWidth = document.documentElement.clientWidth / 1
+    // const elHeight = halfWidth > MAX_HEIGHT ? MAX_HEIGHT :
+    //   halfWidth < MIN_HEIGHT ? MIN_HEIGHT : halfWidth
+    $elShiftY.attr('height', 470);
+    if (_helpers.Resp.isMobile) {
+      $elShiftY.attr('y', 170);
+      console.log($elShiftY.attr('y'));
+    } else if (_helpers.Resp.isTablet) {
+      $elShiftY.attr('y', 60);
+    } else {
+      $elShiftY.attr('y', 0);
+    }
+  }
+  changeY();
+}
+
 _aos2.default.init({
   once: true,
   duration: 600,
