@@ -11080,22 +11080,21 @@ switch (_helpers.currentPage) {
   case 'home':
     new _Home2.default();break;
   case 'faq':
-    new _Faq2.default();break;
+    forSchool();new _Faq2.default();break;
   case 'services':
-    new _Services2.default();break;
+    forSchool();new _Services2.default();break;
   case 'education_system':
-    new _EducationSystem2.default();break;
+    forSchool();new _EducationSystem2.default();break;
   case 'for_students':
   case 'for_school':
-    forSchool();break;
+    forSchool(true);break;
 
   /** No page found */
   default:
-    console.warn('Undefined page');
+    forSchool();console.warn('Undefined page');
 }
 // section top js polifill to chsnge Y in svg
-
-function forSchool() {
+function forSchool(heightFix) {
   var resizeTimer;
   var $elShiftY = (0, _jquery2.default)('.st_clip_shift');
   if (!$elShiftY) return;
@@ -11111,10 +11110,9 @@ function forSchool() {
     // const halfWidth = document.documentElement.clientWidth / 1
     // const elHeight = halfWidth > MAX_HEIGHT ? MAX_HEIGHT :
     //   halfWidth < MIN_HEIGHT ? MIN_HEIGHT : halfWidth
-    $elShiftY.attr('height', 470);
+    heightFix && $elShiftY.attr('height', 470);
     if (_helpers.Resp.isMobile) {
       $elShiftY.attr('y', 170);
-      console.log($elShiftY.attr('y'));
     } else if (_helpers.Resp.isTablet) {
       $elShiftY.attr('y', 60);
     } else {
@@ -11123,6 +11121,56 @@ function forSchool() {
   }
   changeY();
 }
+
+// Form sending
+function FormSend(params) {
+  var $form = (0, _jquery2.default)('.callback-form, .popup-get-consalt__form');
+  var url = 'https://httpbin.org/post';
+  var sending = false;
+
+  $form.on('submit', submitHendler);
+  function submitHendler(e) {
+    e.preventDefault();
+    if (sending) return;
+    var $this = (0, _jquery2.default)(this);
+    var dataForm = $this.serializeArray();
+    var $btn = $this.find('[type=submit]');
+    var textBtn = $btn.val();
+    // console.log({dataForm});
+    if (false) {
+      _jquery2.default.ajax({
+        url: url,
+        method: 'POST'
+      }).done(function (e) {
+        sending = false;
+        $btn.removeClass('sending').prop('disabled', false).val(textBtn);
+
+        // console.log({e},this);
+
+        $this.find('input:not([type=submit])').val('');
+      });
+    } else {
+      setTimeout(function () {
+        sending = false;
+        $btn.removeClass('sending').val('Отправлено!!!');
+
+        // console.log({e},this);
+
+        $this.find('input:not([type=submit])').val('');
+        setTimeout(function () {
+          $btn.prop('disabled', false).val(textBtn);
+        }, 5000);
+      }, 4000);
+    }
+    sending = true;
+    $btn.addClass('sending').prop('disabled', true).val('Отправка...');
+    // console.log({$btn});
+    // const sendingTextChanger = setInterval(() => {
+    //   $btn
+    // })
+  }
+}
+FormSend();
 
 _aos2.default.init({
   once: true,
@@ -11411,33 +11459,11 @@ var Home = function () {
   function Home() {
     _classCallCheck(this, Home);
 
-    this.message = function () {
-      var message = 'Home page scripts initialized on';
-
-      if (_helpers.Resp.isDesk) {
-        return message + ' Desktop';
-      } else if (_helpers.Resp.isTablet) {
-        return message + ' Tablet';
-      } else if (_helpers.Resp.isMobile) {
-        return message + ' Mobile';
-      }
-    }();
-
     // initialize after construction
     this.init();
   }
 
-  /**
-   * Example method.
-   */
-
-
   _createClass(Home, [{
-    key: 'example',
-    value: function example() {
-      console.log(this.message);
-    }
-  }, {
     key: 'initMainSlider',
     value: function initMainSlider() {
       var flkty = new Flickity('.welcome__slider', {
@@ -11477,7 +11503,6 @@ var Home = function () {
       (0, _jquery2.default)(window).on('resize', function (e) {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function () {
-          console.log(flkty);
           if (_helpers.Resp.isMobile) {
             if (!flkty) {
               flickityInit();
