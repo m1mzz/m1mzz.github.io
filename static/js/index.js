@@ -11091,7 +11091,7 @@ switch (_helpers.currentPage) {
 
   /** No page found */
   default:
-    forSchool();console.warn('Undefined page');
+    forSchool();
 }
 // section top js polifill to chsnge Y in svg
 function forSchool(heightFix) {
@@ -11172,6 +11172,20 @@ function FormSend(params) {
 }
 FormSend();
 
+// highlight active menu item
+function menuHighight() {
+  var $menu = (0, _jquery2.default)('.header__menu ');
+  var $links = $menu.find('a');
+  var urlPath = window.location.pathname;
+  var urlFirstТesting = urlPath.split('/')[1];
+  $links.each(function (i, linkTag) {
+    if (linkTag.href && linkTag.href.indexOf && linkTag.href.indexOf(urlFirstТesting) !== -1) {
+      (0, _jquery2.default)(linkTag).addClass('active');
+    }
+  });
+}
+menuHighight();
+
 _aos2.default.init({
   once: true,
   duration: 600,
@@ -11213,22 +11227,9 @@ var Common = exports.Common = function () {
   function Common() {
     _classCallCheck(this, Common);
 
-    this.messages = {
-      constructor: 'Common.js: constructor()...',
-      init: 'Common.js: init()...',
-      example: 'Common.js: example()...'
-    };
-
-    console.log(this.messages.constructor);
-
     // initialize after construction
     this.init();
   }
-
-  /**
-   * Example method.
-   */
-
 
   _createClass(Common, [{
     key: 'menu',
@@ -11267,8 +11268,6 @@ var Common = exports.Common = function () {
      * Initialize common scripts.
      */
     value: function init() {
-      console.log(this.messages.init);
-
       this.menu();
       this.headerWhite();
     }
