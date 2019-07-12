@@ -11021,6 +11021,11 @@ function tabsInit(tab, content) {
 
 /** Import initialized-by-default modules/libs */
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+/** Import page controllers */
+
+
 __webpack_require__(4);
 
 __webpack_require__(5);
@@ -11053,7 +11058,6 @@ var _aos2 = _interopRequireDefault(_aos);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/** Import page controllers */
 function getConsultInit() {
   var $openBtn = (0, _jquery2.default)('.get_consalt').length ? (0, _jquery2.default)('.get_consalt') : (0, _jquery2.default)('.education_categories__cards__item');
   var $modal = (0, _jquery2.default)('#get_consult');
@@ -11070,8 +11074,8 @@ function getConsultInit() {
     $modal.removeClass('open');
   }
 }
-
 getConsultInit();
+
 /**
  * Run appropriate scripts for each page.
  **/
@@ -11122,10 +11126,22 @@ function forSchool(heightFix) {
   changeY();
 }
 
+function alertPopUp(str) {
+  return '<div class="popup-get-consalt open" id="alert">\n  <div class="popup-get-consalt__item">\n    <div class="popup-get-consalt__form">\n        <svg class="popup-get-consalt__close__icon alert__close">\n          <use xlink:href="/static/img/main/icons_sprite.svg#close"></use>\n        </svg>\n        <div class="alert__body">\n          <h3 class="alert__label">' + str + '</h3>\n          <button class="popup-get-consalt__form__button alert__btn">OK</button>\n        <div>\n    </div>\n  </div>\n</div>';
+}
+function alertClose() {
+  _helpers.$body.on('click', '.alert__close, .alert__btn', function () {
+    (0, _jquery2.default)('#alert').removeClass('open');
+    setTimeout(function () {
+      (0, _jquery2.default)('#alert').remove();
+    }, 1300);
+  });
+}
+alertClose();
+
 // Form sending
-function FormSend(params) {
+function formSend(params) {
   var $form = (0, _jquery2.default)('.callback-form, .popup-get-consalt__form');
-  var url = 'https://httpbin.org/post';
   var sending = false;
 
   $form.on('submit', submitHendler);
@@ -11133,51 +11149,65 @@ function FormSend(params) {
     e.preventDefault();
     if (sending) return;
     var $this = (0, _jquery2.default)(this);
-    var dataForm = $this.serializeArray();
+    var data = $this.serializeArray();
     var $btn = $this.find('[type=submit]');
     var textBtn = $btn.val();
-    // console.log({dataForm});
-    if (false) {
-      _jquery2.default.ajax({
-        url: url,
-        method: 'POST'
-      }).done(function (e) {
-        sending = false;
-        $btn.removeClass('sending').prop('disabled', false).val(textBtn);
+    var domen = window.location.protocol + '//' + window.location.host;
+    var endPoint = data.length === 2 ? 'callback' : 'consultation';
+    var url = (window.location.host.includes('localhost') ? 'http://www.uniqutor.top' : domen) + '/api/' + endPoint;
+    _jquery2.default.ajax({
+      url: url,
+      method: 'POST',
+      data: data
+    }).done(function (_ref) {
+      var success = _ref.success,
+          error = _ref.error;
 
-        // console.log({e},this);
-
-        $this.find('input:not([type=submit])').val('');
-      });
-    } else {
-      setTimeout(function () {
-        sending = false;
-        $btn.removeClass('sending').val('Отправлено!!!');
-
-        // console.log({e},this);
-
-        $this.find('input:not([type=submit])').val('');
-        setTimeout(function () {
-          $btn.prop('disabled', false).val(textBtn);
-        }, 5000);
-      }, 4000);
-    }
+      var $allInput = $this.find('input:not([type=submit])');
+      $allInput.removeClass('error');
+      (0, _jquery2.default)('.validation__error').remove();
+      if (success) {
+        if (data.length !== 2) {
+          (0, _jquery2.default)('#get_consult').removeClass('open');
+        }
+        $allInput.val('');
+        _helpers.$body.append(alertPopUp(success));
+      } else if (error) {
+        if (error && (typeof error === 'undefined' ? 'undefined' : _typeof(error)) === 'object') {
+          for (var name in error) {
+            if (error.hasOwnProperty(name)) {
+              (function () {
+                var arrErr = error[name];
+                var $input = $this.find('input[name=' + name).addClass('error');
+                if ($input) {
+                  arrErr.forEach(function (text) {
+                    (0, _jquery2.default)('<p class="validation__error">*' + text + '</p>').insertAfter($input);
+                  });
+                }
+              })();
+            }
+          }
+        }
+      }
+    }).fail(function (e) {
+      console.warn({ e: e });
+    }).always(function () {
+      sending = false;
+      $btn.removeClass('sending').prop('disabled', false).val(textBtn);
+    });
     sending = true;
     $btn.addClass('sending').prop('disabled', true).val('Отправка...');
-    // console.log({$btn});
-    // const sendingTextChanger = setInterval(() => {
-    //   $btn
-    // })
   }
 }
-FormSend();
+formSend();
 
 // highlight active menu item
 function menuHighight() {
-  var $menu = (0, _jquery2.default)('.header__menu ');
-  var $links = $menu.find('a');
   var urlPath = window.location.pathname;
   var urlFirstТesting = urlPath.split('/')[1];
+  if (!urlFirstТesting) return;
+  var $menu = (0, _jquery2.default)('.header__menu ');
+  var $links = $menu.find('a');
   $links.each(function (i, linkTag) {
     if (linkTag.href && linkTag.href.indexOf && linkTag.href.indexOf(urlFirstТesting) !== -1) {
       (0, _jquery2.default)(linkTag).addClass('active');
